@@ -1,11 +1,9 @@
 package tn.esprit.artifact.entity;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import jakarta.persistence.*;
-import org.springframework.core.SpringVersion;
-
-import java.util.Date;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
@@ -14,7 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class QA {
+public class QA implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_qa;

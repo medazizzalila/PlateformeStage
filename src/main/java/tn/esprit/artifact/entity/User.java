@@ -3,9 +3,7 @@ package tn.esprit.artifact.entity;
 import lombok.*;
 
 import jakarta.persistence.*;
-import org.springframework.core.SpringVersion;
 
-import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -44,7 +42,7 @@ public class User {
     private Set<Formation> formations;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Reclamtion> reclamtions;
+    private Set<Reclamation> reclamations;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
     private Set<Role> roles;

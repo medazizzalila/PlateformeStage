@@ -1,8 +1,7 @@
 package tn.esprit.artifact.entity;
-import lombok.*;
 
+import lombok.*;
 import jakarta.persistence.*;
-import org.springframework.core.SpringVersion;
 
 import java.util.Date;
 import java.util.Set;
