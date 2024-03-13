@@ -26,6 +26,8 @@ public class Offretravail implements Serializable {
     private String email;
     private long num;
     private String societe;
+    private String titre;
+    private String localisation;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "offretravail")
     private Set<User> users;

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.artifact.entity.Offretravail;
 import tn.esprit.artifact.repository.OffretravailRepository;
+import tn.esprit.artifact.service.ScrapperService;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class OffretravailController {
 
     @Autowired
     private OffretravailRepository offretravailRepository;
+    private final ScrapperService scrapperService;
 
     @PostMapping("add")
     public Offretravail createQa(@RequestBody Offretravail offretravail) {
@@ -50,4 +52,11 @@ public class OffretravailController {
                 .orElseThrow(() -> new IllegalArgumentException("QA with id " + id + " not found."));
         return ResponseEntity.ok().body(ot);
     }
+
+    @GetMapping("/scrape-and-save")
+    public void scrapeAndSave() {
+        List<Offretravail> scrapedData = scrapperService.scraping();
+        offretravailRepository.saveAll(scrapedData);
+    }
+
 }

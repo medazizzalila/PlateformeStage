@@ -21,7 +21,6 @@ public class Reclamation implements Serializable {
     private Long id_reclamation;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date date;
-
     private String contenu;
     private String piece;
 
